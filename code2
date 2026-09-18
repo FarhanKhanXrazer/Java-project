@@ -1,0 +1,25 @@
+public class Event {
+    private String eventId;
+    private String eventName;
+    private String date;
+    private int capacity;
+
+    public Event(String eventId,
+                 String eventName,
+                 String date,
+                 int capacity) {
+
+        this.eventId = eventId;
+        this.eventName = eventName;
+        this.date = date;
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return eventId + "," +
+               eventName + "," +
+               date + "," +
+               capacity;
+    }
+}
