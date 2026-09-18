@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+            System.out.println("\n===== Smart Campus Event Management =====");
+            System.out.println("1. View Events");
+            System.out.println("2. Add Event");
+            System.out.println("3. Generate Report");
+            System.out.println("4. Exit");
+
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch(choice) {
+                case 1:
+                    EventManager.viewEvents();
+                    break;
+
+                case 2:
+                    System.out.print("Event ID: ");
+                    String id = sc.nextLine();
+
+                    System.out.print("Event Name: ");
+                    String name = sc.nextLine();
+
+                    System.out.print("Date: ");
+                    String date = sc.nextLine();
+
+                    System.out.print("Capacity: ");
+                    int cap = sc.nextInt();
+
+                    EventManager.addEvent(
+                        new Event(id, name, date, cap)
+                    );
+                    break;
+
+                case 3:
+                    ReportGenerator.generateReport();
+                    break;
+
+                case 4:
+                    System.exit(0);
+            }
+        }
+    }
+}
